@@ -1,0 +1,32 @@
+void setup() {
+  size(1000, 700);
+  strokeWeight(20);
+  stroke(255,255,255);
+  fill(100,100,235);
+  quad(100,100,900,100,900,600,100,600);
+  line(0,0,500,350);
+  line(500,350,0,700);
+  fill(0,0,255);
+  ellipse(750,350,50,400);
+  ellipse(600,350,50,400);
+  strokeWeight(1);
+  stroke(0,255,0);
+  fill(255);
+  arc(500,350,1000,700, PI - QUARTER_PI, PI + QUARTER_PI);
+  strokeWeight(3);
+  stroke(0,0,255);
+  fill(100);
+  rect(400,250,200,200);
+  rect(750,250,200,200);
+  fill(0);
+  strokeWeight(1);
+  stroke(0,0,255);
+  triangle(500,350,400,300,400,400);
+  quad(500,300,500,400,600,375,600,325);
+  triangle(750,375,750,325,900,350);
+  stroke(255,0,0);
+  strokeWeight(10);
+  point(250,175);
+  point(250, 525);
+  bezier(100,100,200,200,125,300,400,600);
+}

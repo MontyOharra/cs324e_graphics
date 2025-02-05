@@ -1,0 +1,5 @@
+I am rewriting my txt files in this txt file now. Unfortunately, during testing, my text file got deleted by processing and is now unrecoverable somehow.
+
+How could I ever recover it? Maybe it would take 1, or 2, or 3 hours. The only reason for those last two sentences is to include different characters in order to better test this code.
+
+Now I am writing a third paragraph, because although the hands on says "paragraphs" and two is technically plural, I feel like two would not be entirely enough. So, therefore, I am writing this third paragraph about that, because I can't think about anything else to write!
