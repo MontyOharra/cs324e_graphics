@@ -1,0 +1,11 @@
+This animation depicts a hill with some trees on it, and a sky that turns from night to day.
+
+In order to define the night/day cycle, the user can edit the speed of brightness change, along with the max luminosity allowed. During the draw cycle, the program will increment the luminosity either up or down, which determines the current size of the sun, as well as the current hue of the sky background. Once the max luminosity is reached, the program will begin to decrement until it reaches a luminosity of 1, which then toggles a Boolean to tell the code to start incrementing back up, repeating the cycle.
+
+The sun is drawn with multiple circles that grow in size and decrease in transparency, so that the edge of the light is much softer than the center, based on the current luminosity. It also allows for different x and y values, so that the sun can be placed elsewhere.
+
+The background is defined with a set of RGB values for both a night sky and day sky color. It uses the luminosity as essentially a slider, where a luminosity of 1 will output the night sky values, and a luminosity equal to the max will output the day sky values.
+
+I also have a function for drawing trees of various sizes and positions, which are made up of a simple ellipse and rectangle pair.
+
+The hill is drawn using a custom defined shape, because I wanted it to fill in from the top (the defined Bezier curve) to the bottom of the screen. It defines the shape using beginShape and endShape, and vertex points.
