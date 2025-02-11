@@ -1,0 +1,13 @@
+a3_wordfrequency:
+
+This section uses two custom classes. The DataPoint class is more of a basic type, used for more readability of code for accessing x and y values. The main functionality is implemented in the LineGraph class.
+
+This class takes in a list of DataPoint objects, windowWidth and windowHeight, and a padding amount. The window width and height, along with the padding amount are used to create the bounds for the graph on construction. The graph will take in the x and y coordinates of the DataPoint objects, then using the bounds calculated during construction, will normalize the data so that the largest values on both the x and y axes coincide with the largest x and y values within the set of datapoints.
+
+Each of the other DataPoints are scaled according to this normalizing, and the getScreenX and getScreenY functions are used to plot the respective x and y values on the correct pixel values within the window within the displayPoints function.
+
+The displayAxes function takes in two parameters, the number of y data value marks, and the number of x data value marks. This allows the user to have finer or coarser value labels depending on the scale of the graph calculated at construction. It displays, on both the x and y axes, the axis lines within the bounds of the graph, data value labels, and labels for what the axis represents.
+
+The displayLines function will display lines connecting each of the DataPoints, going from the first listed and connecting to the last.
+
+This class structure allows for a more general representation of the data of word frequencies, and can even be used to display other types of data, as long as the user changes the axes' labels via the provided functions and parameters.
