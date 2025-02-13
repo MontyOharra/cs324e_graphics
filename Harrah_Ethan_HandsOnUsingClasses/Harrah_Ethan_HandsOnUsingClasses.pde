@@ -1,15 +1,25 @@
-Spot spot1 = new Spot(50, 50, 15, 10, 10);
-Spot spot2 = new Spot(400, 450, 50, -2, -4);
+import java.util.Random;
+
+int numSpots = 50;
+Spot[] spots = new Spot[numSpots];
 
 void setup() {
   size(500,500);
-  
+  Random rand = new Random();
+ 
+  float maxSpeed = 2;
+ 
+  for (int i = 0; i < numSpots; i++) {
+    float radius = rand.nextFloat() * 50 + 5;
+    Spot spot = new Spot(  rand.nextFloat() * (width - 2*radius) + radius,  rand.nextFloat() * (height - 2*radius) + radius,  rand.nextFloat() * maxSpeed,  rand.nextFloat() * maxSpeed, radius);
+    spots[i] = spot;
+  }
 }
 
 void draw() {
   background(0);
-  spot1.display();
-  spot1.move();
-  spot2.display();
-  spot2.move();
+  for (Spot spot : spots) {
+    spot.display();
+    spot.move();
+  }
 }
