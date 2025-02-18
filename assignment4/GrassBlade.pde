@@ -17,11 +17,10 @@ class GrassBlade {
     this.bladeHeight = bladeHeight;
     this.bladeFillColor = bladeFillColor;
     this.bladeOutlineColor = bladeOutlineColor;
-    
-    this.bladeSway = 0;
+
   }
 
-  void display() {
+  void render(float sway) {
     pushMatrix();                  // Save the current transformation matrix
     translate(this.baseX, this.baseY); // Move the origin to the blade's base
     rotate(this.baseRotation + 1 / 150);         // Rotate the coordinate system by 'rotation'
@@ -36,9 +35,9 @@ class GrassBlade {
     bezierVertex(
       this.bladeWidth, 0,
       this.bladeWidth, -this.bladeHeight / 2,
-      this.bladeSway, -this.bladeHeight
+      sway, -this.bladeHeight
     );
-    vertex(this.bladeSway, -this.bladeHeight);
+    vertex(sway, -this.bladeHeight);
     bezierVertex(
       -this.bladeWidth, -this.bladeHeight / 2,
       -this.bladeWidth, 0,
@@ -47,8 +46,4 @@ class GrassBlade {
     endShape();
     popMatrix();    
   }
-  
-  void setSway(float sway) {
-    this.bladeSway = sway;
-  } 
 }

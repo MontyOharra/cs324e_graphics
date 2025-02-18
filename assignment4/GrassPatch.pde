@@ -1,12 +1,9 @@
 import java.util.Random;
 
-class GrassPatch {
-  private float sway;
-  
+class GrassPatch {  
   private GrassBlade[] blades;
   
   GrassPatch(float baseX, float baseY, float baseWidth, float baseHeight, float widthMaxVariance, float heightMaxVariance, int bladeCount) {
-    this.sway = 0;
     
     Random rand = new Random();
     
@@ -23,14 +20,9 @@ class GrassPatch {
     }
   }
   
-  void display() {
+  void render(float sway) {
      for (int i = 0; i < this.blades.length; i++) {
-       blades[i].setSway(this.sway); 
-       blades[i].display(); 
+       blades[i].render(sway); 
      }
-  }
-  
-  void setSway(float sway) {
-     this.sway = sway;
   }
 }
