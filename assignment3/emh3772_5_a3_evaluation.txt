@@ -1,0 +1,5 @@
+I am in group 5
+
+Ethan Harrah - I worked on the wordfrequency part of the assignment. I didn't really see the code from my other two group members, but I think that I went the most in-depth with it, as I was trying to get us the points for the extra credit by implementing functionality via objects and allowing for some user input on how the visualization looked.
+Matthew Na - He took a lot of charge and got everything going. He also wrote all of the Python code, did the wordcloud, and compiled everything together for submission, so I'd say he did the most work out of the three of us.
+Tiffany Huang - She was a little quiet, and I didn't really get to talk to her too much, but she was responsible for the novelvisualization aspect of the project, and as far as I know, she got all of her code working and did it well.
