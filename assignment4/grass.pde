@@ -1,9 +1,21 @@
 
+Field field;
+
+void setup() {
+  size(800,800);
+  field = new Field(50, color(0,255,0), 1, 1);
+  
+}
+
+void draw() {
+  field.display();
+}
+/*
 
 GrassPatch[] patches;
 boolean swayRight;
 float sway;
-/*
+
 void setup() {
   size(500,500); 
   Random rand = new Random();

@@ -20,11 +20,11 @@ class GrassBlade {
     
     this.bladeSway = 0;
   }
-  
+
   void display() {
     pushMatrix();                  // Save the current transformation matrix
     translate(this.baseX, this.baseY); // Move the origin to the blade's base
-    rotate(this.baseRotation + sway / 150);         // Rotate the coordinate system by 'rotation'
+    rotate(this.baseRotation + 1 / 150);         // Rotate the coordinate system by 'rotation'
     
     stroke(this.bladeOutlineColor);
     fill(this.bladeFillColor);
@@ -50,5 +50,5 @@ class GrassBlade {
   
   void setSway(float sway) {
     this.bladeSway = sway;
-  }  
+  } 
 }
