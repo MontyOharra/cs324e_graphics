@@ -1,18 +1,20 @@
-class Spot {
+class ColorSpot {
   private PVector speed;
   private PVector position;
   private float radius;
   private float elasticity;
+  private int fillColor;
   
-  Spot(float initPosX, float initPosY, float initSpeedX, float initSpeedY, float radius) {
+  ColorSpot(float initPosX, float initPosY, float initSpeedX, float initSpeedY, float radius, int fillColor) {
     this.speed = new PVector(initSpeedX, initSpeedY);
     this.position = new PVector(initPosX, initPosY);
+    this.fillColor = fillColor;
     this.elasticity = 1;
     this.radius = radius;
   }
 
   void display() {
-     
+     fill(this.fillColor);
      circle(this.position.x, this.position.y, this.radius); 
   }
   
