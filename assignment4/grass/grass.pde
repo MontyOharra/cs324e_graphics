@@ -10,7 +10,7 @@ class GrassPatch {
     
     Random rand = new Random();
     
-    blades = new GrassBlade[bladeCount];
+    blades = new GrassBlade[bladeCount];  
     for (int i = 0; i < bladeCount; i++) {
       float bladeWidth = baseWidth + widthMaxVariance * rand.nextFloat() * 2 - 1;
       float bladeHeight = baseHeight + heightMaxVariance * rand.nextFloat() * 2 - 1;
@@ -98,7 +98,7 @@ void setup() {
   Random rand = new Random();
   patches = new GrassPatch[5];
   for (int i = 0; i < 5; i++) {
-    GrassPatch patch = new GrassPatch(250 + rand.nextFloat()*200 - 100, 250 + rand.nextFloat()*200 - 100, 5, 100, 4, 40, 8); 
+    GrassPatch patch = new GrassPatch(250 + rand.nextFloat()*200 - 100, 250 + rand.nextFloat()*200 - 100, 15, 150, 4, 40, 3); 
     patches[i] = patch;
   }
   swayRight = true;
