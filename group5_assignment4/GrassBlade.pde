@@ -1,4 +1,3 @@
-
 class GrassBlade {
   private float baseX;
   private float baseY;

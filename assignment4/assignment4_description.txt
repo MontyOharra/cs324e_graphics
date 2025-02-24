@@ -1,0 +1,23 @@
+For my section of the assignment, I made a Bird class that will animate a bird flying while flapping its wings. The flight and movement of the bird is the main animation whereas the wing's motion serves as the secondary animation. 
+
+The class will initialize with several float arguments, including x and y positions, x and y directions, bird and wing speed. The bird speed is converted to an absolute value to ensure only the direction arguments will determine bird's path. The position and direction arguments are also converted to PVectors for later use. The objects will differ from one another in how they have different flight and wing speeds, starting positions and flight paths. The PShapes are also initialized for later use to draw the bird. For all components of the bird, a conditional statement is used to ensure the bird faces the direction it flies. The class uses several methods to animate properly:
+
+The "fly()" method will use the given speed and direction vectors to determine and update the bird's movements. If the bird's position goes beyond the edge of the canvas, the bird's position will be reset to the opposing edge of the canvas. For example, if it moves past the right of the screen, it will reappear on the left side of the screen. 
+
+The "flap()" method will use the given wing speed argument to make the wings move at a specified rate. The ellipse shape representing the wing of the bird will be continuously updated using a global variable that toggles between the wing moving upwards versus downwards. The rotate function is used to move the wing according to the changing wing angle.
+
+The "display()" method will finally depict the bird in animation. First, a matrix is pushed to create the main animation. The translate transformation function is used to ensure the bird is drawn in the updated positions, ensuring the flight is animated smoothly. The body, wing and head are made with ellipses and the beak is made a triangle. All shapes are made using PShapes to properly draw them. Inside this matrix, another matrix is pushed to create a second level to the animation hierarchy. This allows the wing to be displayed and animated relative to the moving bird. Here, the rotate function is used. Finally, both matrices are popped. 
+
+For extra credit, the sound of birds was also added by importing "ddf.minim.*" into the main file for the running the program. The "birdsound.mp3" file is loaded into the program and played upon running. As mentioned in the README, the Minim library must be installed for this feature.
+
+Tiffany Nguyen: Campfire
+
+The intent of this animation was to create a campfire with a flickering flame. The CampFire class takes parameters x, y, flickerSpeed, and color. x and y would be the location of the flame, the flickerSpeed determines the speed in which the flame would pulse/flicker, and color changes the color of the flame. There is also a fixed variable that is inside the CampFire class, the scale which is set at 1 to represent the starting size of the fire. 
+
+The CampFire class contains a flicker and display method:
+
+flicker - adjusts the scale of the tip of the flame, gradually getting larger and then smaller in a continuous loop. It also adjusts the x value of the parent object so that the entire flame moves slightly to the left and right to demonstrate flickering.
+
+display - displays the wood the fire is burning and creates a parent object that is an ellipse that represents the base of the flame. The child object, a triangle, scales and moves along with the parent object, showing hierarchy.
+
+unexpected challenges: During the process of doing this assignment, I misunderstood the meaning of hierarchy in the terms of this assignment. I tried making multiple classes in the beginning, with 2 classes and objects that acted apart from each other. After better understanding transformations, I was able to create hierarchy in my code to where the child object moves in sync with the parent.

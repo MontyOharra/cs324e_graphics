@@ -3,7 +3,7 @@ import java.util.Random;
 class GrassPatch {  
   private GrassBlade[] blades;
   
-  GrassPatch(float baseX, float baseY, float baseWidth, int bladeCount, float baseHeight, float widthMaxVariance, float heightMaxVariance, float rotationMaxVariance) {
+  GrassPatch(float baseX, float baseY, float baseWidth, float baseHeight, int bladeCount, float widthMaxVariance, float heightMaxVariance, float rotationMaxVariance) {
     // The grass patch is made up of an array of grass blades.
     //   Each grass blade keeps the same base as the whole patch
     //   with variance among each blade's rotation, color,
@@ -13,9 +13,9 @@ class GrassPatch {
     
     blades = new GrassBlade[bladeCount];  
     for (int i = 0; i < bladeCount; i++) {
-      float bladeWidth = baseWidth + widthMaxVariance * (rand.nextFloat() * 2 - 1);
-      float bladeHeight = baseHeight + heightMaxVariance * (rand.nextFloat() * 2 - 1);
-      float bladeRotation = rotationMaxVariance * (rand.nextFloat() * 2 - 1);
+      float bladeWidth = baseWidth + widthMaxVariance * rand.nextFloat() * 2 - 1;
+      float bladeHeight = baseHeight + heightMaxVariance * rand.nextFloat() * 2 - 1;
+      float bladeRotation = rotationMaxVariance * rand.nextFloat() * 2 - rotationMaxVariance / 2;
       float greenFillValue = rand.nextFloat() * 100 + 120;
       float redFillValue = rand.nextFloat() * greenFillValue * .5;
       float redBorderValue = redFillValue * .7;
