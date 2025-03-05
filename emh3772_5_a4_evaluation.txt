@@ -1,0 +1,7 @@
+I am in group 5. I don't think we need a meeting.
+
+Ethan Harrah - Worked on the Field and GrassPatch / GrassBlade classes. Because Matthew did the compilation of everyone's code and the submission last time, I took it over this time. My code was the most involved as far as the object oriented programming side of things goes, and I spent a lot of time to get it looking cool. I do, however, feel like I could've communicated a bit better with the team. I originally thought we were building out the scene a bit different, and so I had to switch up some of my design to follow suit.
+
+Matthew Na - Worked on the Bird class, as well as adding the sound aspect for extra credit. Like last project, he made sure everything was going smoothly and was the most vocal when we setup meeting times, and got his part done the earliest.
+
+Tiffany Huang - Worked on the CampFire class. I feel like Tiffany was a little less enthusiastic about her code with the class, as it seemed to be the most bare bones of the three parts, with just the main requirements being done. She did get her part done, though, and I believe contributed a lot to the progress report midway through the assignment.
