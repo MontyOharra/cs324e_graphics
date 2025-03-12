@@ -1,0 +1,46 @@
+Overall:
+
+For this assignment, our team's intended animation will create an outdoor scene involving multiple people playing basketball, dogs walking around, swaying trees, and moving clouds and a sun. The story of the sequence is that our animation depicts people having fun in nature with many activities surrounding them. The people move as basketballs move around them, dogs move with their legs and tails wagging, the tree branches sway causing the leaves to move, and the clouds and sun move dynamically. The players, dogs, trees and sky are made using objects from the individual classes the team has made. Each class uses an animation hierarchy to create two distinct levels of animation. This sequence runs indefinitely from the time the user begins the program to when they exit the program. Everyone's individual classes come together in the "draw()" function where their methods are all called.
+
+
+Matthew Na (Player Class):
+
+For my section of the assignment, I created a "Player" class in order to create a 3D animation of a person playing basketball. This animation is made simply with spheres and boxes. The person is made from boxes for the legs and torso and a sphere for the head. The basketball is made from a single sphere. In the "Player" class, there are several methods that work cohesively to create two distinct forms of animation in a hierarchical manner. The objects of this class are initialized with starting positions, movement and ball speeds, and their direction of movement. All of these arguments are floats that the user can specify to create diverse player objects.
+
+For the main animation, the person moves across the screen using a "move()" method. In this method, the position is updated using the direction and speed arguments. If the position goes beyond the bounds of the canvas, the position will be reset accordingly. The "display()" function visualizes this first level of the animation by first pushing a matrix and using a translate function on the position coordinates of the player.
+
+For this class, there are two secondary animations. The first is the movement of the legs which is also programmed within the "move()" method. In this method, the angle of the legs are updated continuously. In the "display()" function, within the first matrix that was pushed, additional matrices are pushed to animate the boxes and spheres relative to the changing position of the player. These boxes and sphere create the player's body and head. In two of these nested matrices, the boxes depicting the two legs are created and the rotateZ function is used to move the legs, resulting in a smooth walking animation.
+
+The other secondary animation is the orange basketball that spins around the player as they move. The revolution of the sphere is accomplished with the "spinBall()" method as this method increments the angle of the ball's position relative to the person by the specified ball speed. This effect is animated in the "display()" function as another nested matrix which uses both the rotateY and translate functions. The translate function positions the ball away from the person, and the rotateY function makes the ball orbit the person as they move.
+
+An unexpected challenge I faced was trying to create the stack of 3D objects in order to create a visualization of a person with legs and a head. The problem was that I was creating these objects within one matrix, making it difficult to find the appropriate values to position and translate each 3D shape. However, by using numerous nested matrices, it became simple and easy to place the 3D shapes relative to the position of the person that moves.
+
+Tiffany Nguyen: Tree class animation
+
+The intention of the animation was to visualize a 3D tree with branches and leaves swaying in the wind. The tree fits into the overall animation narrative because it contributes to the outdoors setting of our animation, which helps our animation scene feel more immersive. In my animation I've implemented the Tree class that takes in the parameters x, y, and z which indicates the position of the tree. The class also has variable angle that uses sine to allow for the swaying motion of the branches.
+
+The class has a singular function display() which outputs the tree and the swaying leaves. In the display() function, I created a rectilinear box that would represent the stump of the tree. Along with that, I've also created 2 separate branches from boxes that attach to the stump that sway based on the angle with spheres of different sizes attached to them. This demonstrates hierarchy because the branches move dependent of the swaying branches. Something challenging about creating this animation was the limitations of making a natural looking animation with the primitive 3D objects in processing. Since I decided from the beginning that I would be using processing's basic 3D forms, I didn't realize moving forward that it would be challenging to achieve a convincing looking tree. However, after a bit of experimentation, I think I was able to  visually communicate that it was a tree through the use of colors and animation of the branches.
+
+Ethan Harrah (Dog Class):
+
+For my part of the assignment, I created a Dog class to animate a dog running in 3D space. This class models the dog with boxes for the main body and legs and a sphere for the head. A key element of this class is the hierarchical structure of transformations using pushMatrix() and popMatrix(), allowing each body part to be positioned and animated relative to the dog's overall movement.
+
+The intended animation is a running dog that continuously moves across the screen, showcasing a leg-swinging motion. Inside the move() method, the dog’s x-position is updated to simulate forward running, along with the legSwing variable, which increases and decreases from -PI/3 to PI/3. This variable provides the amount of rotation that the leg should have at any given time.
+
+The render() method draws the dog. It begins by rendering the body, which a box scaled according to bodyXLen, bodyYLen, and bodyZLen. From there, it calls the sub render methods, renderLegs() and renderHead(), which, when called within render, create a hierarchical stack of matrices to ensure that each piece is translated, rotated, and displayed in the correct position relative to the dog’s body.
+
+An unexpected challenge I faced was ensuring that the legs rotate around the top face of each leg, rather than rotating about the box’s geometric center. I was eventually able to figure out that the legs needed to be translated into the position where the middle of the leg is located at the hip joint, then rotated about two axes, and then translated down to their proper position.
+
+
+Jim Duong (Sky Class):
+
+For my section of the assignment, I created the "Sky" class to animate a realistic 3D sky environment. The sun, represented as a sphere, moves horizontally across the screen and resets once it exits, creating a continuous day-like motion. The clouds, also represented as clusters of spheres, move at different speeds to simulate natural drifting.
+
+The main animation for this class is the movement of the sun, controlled by the "update()" method. This method increments the sun's position and resets it to the opposite side of the screen when necessary. The "display()" method then renders the sun in its current position.
+
+The secondary animation involves cloud movement, where each cloud moves independently based on a random speed factor. To enhance realism, the cloud class incorporates an additional nested matrix transformation, applying a subtle rotation to each cloud cluster. This rotation effect makes the clouds appear to shift slightly as they move, adding more depth to the scene.
+
+A challenge I encountered was ensuring that the clouds and sun wrapped smoothly around the screen while maintaining natural movement. By carefully structuring the animation using hierarchical transformations and randomized speeds, I achieved a sky animation. The implementation of nested matrices for cloud rotation further improved the visual effect, making the animation more dynamic and engaging.
+
+
+

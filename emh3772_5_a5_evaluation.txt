@@ -1,0 +1,6 @@
+I am in group 5. I don't think we need a meeting.
+
+Ethan Harrah - I worked on the Dog class. Overall, I would say that coding-wise, this was the least intensive project for me personally. The main difficulty came in getting all of the rotations correctly lined up along with the transformations. I worked on a movable camera as well, but I could never end up getting it working properly, so I had to abandon it. I also completed my portion pretty late, which led to a more disorganized compilation of the code, so I need to work on that for next project.
+Matthew Na - He worked on the Player class. Matthew did well again, and ended up fixing the code submission a little bit before the deadline, which was good, becauSse I wouldn't have noticed that.
+Tiffany Huang - She worked on the Tree class. This project she ended up compiling everything together, and I should've sent her my stuff a little earlier on in order for her to have ample time to work on it, as I think the submission got messed up partially.
+Jim Duong - I actually am not entirely sure on what his class was, as he was added in partway through the project and I didn't see his portion of the code checkup, but as far as I know, he got everything completed on time.
