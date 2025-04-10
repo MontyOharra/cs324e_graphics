@@ -1,0 +1,6 @@
+I am in group 5. I don't think fully that we need a group meeting, but I am a little disappointed at some of my group members' contributions.
+
+Ethan Harrah - I worked on the Cloth and ClothThread classes. Overall, I would say that I had a lot in terms of interactivity and simulation. I spent a lot of time making sure the code was fully put together and adjustable, and compiled my code along with Matthew's code.
+Matthew Na - He worked on the Firework and Debris class, which in combination connected with my class. He also made sure all of the group's code was working fully together and did the final submission.
+Tiffany Huang - She worked on the Star class. When I saw the code I was a bit disappointed in the breivty of it, seeing as both me and Matthew had nearly 200 lines of code and hers seemed to be just a copy of the basic physical simulation that was presented in class. I had more expectations for it and wanted to fully build it into my code with the Cloth, but it was very brief and didn't seem to have too much complexity to it.
+Jim Duong - He worked on the Wind class. He also implemented the fire that I had built in along with this code to add more physical simulatory aspects, but also the code seemed a bit lacking as compared to both Matthew and I's code.

@@ -1,8 +1,10 @@
 class DefeatScreen {
+  GameManager manager;
   PVector windowSize;
   
-  DefeatScreen(PVector windowSize) {
-    this.windowSize = windowSize;
+  DefeatScreen(GameManager manager) {
+    this.manager = manager;
+    this.windowSize = manager.windowSize;
   }
   
   void render() {}

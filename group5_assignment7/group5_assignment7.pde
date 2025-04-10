@@ -1,18 +1,18 @@
 PVector windowSize = new PVector(500,500);
-GameWrapper gameWrapper;
+GameManager manager;
 
 void settings() {
   size((int) windowSize.x, (int) windowSize.y);
 }
 
 void setup() {
-  gameWrapper = new GameWrapper(windowSize);
+  manager = new GameManager(windowSize);
 }
 
 void draw() {
-  gameWrapper.render();
-}
+  manager.render();
+}  
 
 void mousePressed() {
-  gameWrapper.mousePressed(); 
+  manager.mousePressed(); 
 }

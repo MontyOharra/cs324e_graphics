@@ -2,6 +2,7 @@ import java.util.function.Consumer;
 
 class StartScreen {
   PVector windowSize;
+  GameManager manager;
   ButtonText startButton;
   ButtonText exitButton;
   ButtonText settingsButton;
@@ -9,22 +10,43 @@ class StartScreen {
   int titleFontSize = 48;
   int buttonFontSize = 24;
   
-  StartScreen(PVector windowSize, GameWrapper gameWrapper) {
-    this.windowSize = windowSize;
-    PVector startPos = new PVector(windowSize.x / 2, windowSize.y / 2);
-    PVector settingsPos = new PVector(windowSize.x / 2, windowSize.y / 2 + 40);
-    PVector exitPos = new PVector(windowSize.x / 2, windowSize.y / 2 + 80);
-    this.startButton = new ButtonText(() -> {gameWrapper.setCurrentState("running");}, "Start", startPos, this.buttonFontSize, color(255), color(200));
-    this.settingsButton = new ButtonText(() -> {gameWrapper.setCurrentState("settings");}, "Settings", settingsPos, this.buttonFontSize, color(255), color(200));
-    this.exitButton = new ButtonText(() -> {exit();}, "Exit", exitPos, buttonFontSize, color(255), color(200));
+  StartScreen(GameManager manager) {
+    this.windowSize = manager.windowSize;
+    this.manager = manager;
+    
+    PVector startButtonPos = new PVector(windowSize.x / 2, windowSize.y / 2);
+    this.startButton = new ButtonText(
+      () -> {manager.currentState = "running";}, 
+      "Start", 
+      startButtonPos, this.buttonFontSize, 
+      color(255), color(200)
+    );
+    
+    PVector settingsButtonPos = new PVector(windowSize.x / 2, windowSize.y / 2 + 40);
+    this.settingsButton = new ButtonText(
+      () -> {manager.currentState = "settings";}, 
+      "Settings", 
+      settingsButtonPos, this.buttonFontSize, 
+      color(255), color(200)
+    );
+    
+    PVector exitButtonPos = new PVector(windowSize.x / 2, windowSize.y / 2 + 80);
+    this.exitButton = new ButtonText(
+      () -> {exit();}, 
+      "Exit", 
+      exitButtonPos, buttonFontSize, 
+      color(255), color(200)
+    );
   }
   
   void render() {
     background(0);
     textAlign(CENTER, CENTER);
-    textSize(this.titleFontSize);
     fill(255);
+    
+    textSize(this.titleFontSize);
     text("Game Name", this.windowSize.x / 2, this.windowSize.y / 4);
+   
     this.startButton.render();
     this.exitButton.render();
     this.settingsButton.render();
@@ -34,5 +56,5 @@ class StartScreen {
     this.startButton.mousePressed();
     this.settingsButton.mousePressed();
     this.exitButton.mousePressed(); 
-}
+  }
 }

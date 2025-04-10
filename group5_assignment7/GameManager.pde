@@ -2,11 +2,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
 
-interface StateChanger {
-  void changeState(String newState);
-}
 
-class GameWrapper {
+class GameManager {
   PVector windowSize;
   String currentState;
   Map<String, Object> settings;
@@ -17,17 +14,17 @@ class GameWrapper {
   PauseScreen pauseScreen;
   DefeatScreen defeatScreen;
   
-  GameWrapper(PVector windowSize) {
+  GameManager(PVector windowSize) {
     this.windowSize = windowSize;
     this.currentState = "start";
     
     this.settings = new HashMap();
     this.settings.put("playerColor", "white");
-    this.startScreen = new StartScreen(windowSize, this);
-    this.settingsScreen = new SettingsScreen(windowSize, this);
-    this.gameScreen = new GameScreen(windowSize);
-    this.pauseScreen = new PauseScreen(windowSize);
-    this.defeatScreen = new DefeatScreen(windowSize);
+    this.startScreen = new StartScreen(this);
+    this.settingsScreen = new SettingsScreen(this);
+    this.gameScreen = new GameScreen(this);
+    this.pauseScreen = new PauseScreen(this);
+    this.defeatScreen = new DefeatScreen(this);
   }
   
   void render() {
@@ -56,20 +53,35 @@ class GameWrapper {
     } else if (this.currentState == "settings") {
       this.settingsScreen.mousePressed();
     } else if (this.currentState == "game") {
-      this.gameScreen.mousePressed();
+      
     } else if (this.currentState == "paused") {
       this.pauseScreen.mousePressed();
     } else if (this.currentState == "defeat") {
       this.defeatScreen.mousePressed();
     }
   }
- 
-   void setCurrentState(String currentState) {
-     this.currentState = currentState; 
-   }
    
-   void setSettingsValue(String setting, Object newValue) {
-     this.settings.put(setting, newValue);
-   }
+  void keyPressed() {
+    if (this.currentState == "start") {
+      
+    } else if (this.currentState == "settings") {
+      
+    } else if (this.currentState == "game") {
+      this.gameScreen.keyPressed();
+    } else if (this.currentState == "paused") {
+      
+    } else if (this.currentState == "defeat") {
+      
+    }
+  }
+  
+  Integer getPlayerColor() {
+     String playerColorValue = (String) this.settings.get("playerColor");
+     if (playerColorValue == "white") {return color(255);}
+     else if (playerColorValue == "red") {return color(255, 0, 0);}
+     else if (playerColorValue == "green") {return color(0, 255, 0);}
+     else if (playerColorValue == "blue") {return color(0, 0, 255);}
+     else {return null;} 
+  }
  
 }

@@ -1,8 +1,10 @@
 class PauseScreen {
+  GameManager manager;
   PVector windowSize;
   
-  PauseScreen(PVector windowSize) {
-    this.windowSize = windowSize;
+  PauseScreen(GameManager manager) {
+    this.manager = manager;
+    this.windowSize = manager.windowSize;
   }
   
   void render() {}

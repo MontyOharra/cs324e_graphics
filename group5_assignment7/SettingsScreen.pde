@@ -3,7 +3,7 @@ import java.util.HashMap;
 
 class SettingsScreen {
   PVector windowSize;
-  GameWrapper gameWrapper;
+  GameManager manager;
   
   ButtonText returnButton;
   ButtonText selectColorButton;
@@ -12,22 +12,22 @@ class SettingsScreen {
   String selectedColor;
   int buttonFontSize = 24;
     
-  SettingsScreen(PVector windowSize, GameWrapper gameWrapper) {
-    this.selectedColor = (String) gameWrapper.settings.get("playerColor");
-    this.windowSize = windowSize;
+  SettingsScreen(GameManager manager) {
+    this.manager = manager;
+    this.windowSize = manager.windowSize;
     
-    PVector currentPlayerColorTextPos = new PVector(windowSize.x / 2, windowSize.y / 4);
+    this.selectedColor = (String) manager.settings.get("playerColor");
     
     PVector returnButtonPos = new PVector(windowSize.x / 2, 3 * windowSize.y / 4);
     this.returnButton = new ButtonText(
-      () -> {gameWrapper.setCurrentState("start");},
+      () -> {manager.currentState = "start";},
       "Return", returnButtonPos, this.buttonFontSize, 
       color(255), color(200)
     );
     
     PVector selectColorButtonPos = new PVector(windowSize.x / 2, windowSize.y / 2);
     this.selectColorButton = new ButtonText(
-      () -> {gameWrapper.settings.put("playerColor", this.selectedColor);}, 
+      () -> {manager.settings.put("playerColor", this.selectedColor);}, 
       "Select Color", selectColorButtonPos, this.buttonFontSize, 
       color(255), color(200)
      );
@@ -63,17 +63,14 @@ class SettingsScreen {
   }
   
   void render() {
-    print(this.selectedColor);
     background(0);
-    textAlign(CENTER, CENTER);
     
     textAlign(CENTER, CENTER);
     textSize(24);
-    fill();
-    text("Current Player Color", this.windowSize.x / 2, this.windowSize.y / 4);
-    
-    textSize(this.buttonFontSize);
+    fill(this.manager.getPlayerColor());
+    text("Current Player Color: " + this.manager.settings.get("playerColor"), this.windowSize.x / 2, this.windowSize.y / 4);
     fill(255);
+    
     this.selectColorButton.render();
     this.returnButton.render();
     for (ButtonSelect currColorButton : this.colorSelectionButtons.values()) {
