@@ -2,7 +2,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.ArrayList;
 
-
 class GameManager {
   PVector windowSize;
   String currentState;
@@ -29,18 +28,18 @@ class GameManager {
   
   void render() {
     background(0);
-    if(this.currentState == "start") {
+    if (this.currentState.equals("start")) {
       this.startScreen.render();
-    } else if (this.currentState == "game") {
+    } else if (this.currentState.equals("game")) {
       this.gameScreen.render(); 
       this.gameScreen.incrementTime();
-    } else if (this.currentState == "paused") {
+    } else if (this.currentState.equals("paused")) {
+      // Render game screen (without updates) and overlay pause screen.
       this.gameScreen.render();
-      tint(255, 220);
       this.pauseScreen.render();
-    } else if (this.currentState == "settings") {
+    } else if (this.currentState.equals("settings")) {
       this.settingsScreen.render();
-    } else if (this.currentState == "defeat") {
+    } else if (this.currentState.equals("defeat")) {      
       this.gameScreen.render();
       tint(255, 225);
       this.defeatScreen.render(); 
@@ -69,11 +68,19 @@ class GameManager {
     } else if (this.currentState == "game") {
       this.gameScreen.keyPressed();
     } else if (this.currentState == "paused") {
-      
+      this.pauseScreen.keyPressed();
+      this.gameScreen.keyPressed();
     } else if (this.currentState == "defeat") {
       
     }
   }
+  
+  void keyReleased() {
+    if (this.currentState == "game") {
+      this.gameScreen.keyReleased();
+    }
+  }
+  
   
   Integer getPlayerColor() {
      String playerColorValue = (String) this.settings.get("playerColor");

@@ -1,4 +1,4 @@
-PVector windowSize = new PVector(500,500);
+PVector windowSize = new PVector(800,800);
 GameManager manager;
 
 void settings() {
@@ -15,4 +15,12 @@ void draw() {
 
 void mousePressed() {
   manager.mousePressed(); 
+}
+
+void keyPressed() {
+  manager.keyPressed(); 
+}
+
+void keyReleased() {
+  manager.keyReleased(); 
 }

@@ -16,7 +16,7 @@ class StartScreen {
     
     PVector startButtonPos = new PVector(windowSize.x / 2, windowSize.y / 2);
     this.startButton = new ButtonText(
-      () -> {manager.currentState = "running";}, 
+      () -> {manager.currentState = "game"; manager.gameScreen.startGame();}, 
       "Start", 
       startButtonPos, this.buttonFontSize, 
       color(255), color(200)
